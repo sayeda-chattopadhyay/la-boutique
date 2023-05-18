@@ -1,5 +1,7 @@
 import React from "react";
 
+import Products from "../api/Products";
+
 const Home = () => {
   return (
     <div className="home">
@@ -8,6 +10,7 @@ const Home = () => {
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis,
         repellat!
       </p>
+      <Products />
     </div>
   );
 };
