@@ -1,8 +1,6 @@
-// import { Link } from "react-router-dom";
-import { StyledContainer } from "../components/styles/Container.styled";
-// import { StyledCard } from "../components/styles/Card.styled";
-import Card from "../components/card/Card.jsx";
 
+import { StyledContainer } from "../components/styles/Container.styled";
+import Card from "../components/card/Card"; 
 import useApi from "./ApiHooks";
 
 const url = "https://api.noroff.dev/api/v1/online-shop";
