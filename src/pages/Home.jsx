@@ -1,15 +1,11 @@
-import React from "react";
+import Banner from "../components/banner/Banner";
 
 import Products from "../api/Products";
 
 const Home = () => {
   return (
     <div className="home">
-      <h1>Home Page</h1>
-      <p>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis,
-        repellat!
-      </p>
+      <Banner />
       <Products />
     </div>
   );
