@@ -1,15 +1,16 @@
-import React from "react";
+import { StyledNavBar } from "../styles/NavBar.Styled";
 import { NavLink } from "react-router-dom";
+import { AiOutlineShoppingCart } from "react-icons/ai";
 
 const NavBar = () => {
   return (
-    <div className="navbar">
-      <nav>
-        <NavLink to="/">Home</NavLink>
-        <NavLink to="/Contact">Contact</NavLink>
-        <NavLink to="/Cart">Cart</NavLink>
-      </nav>
-    </div>
+    <StyledNavBar>
+      <NavLink to="/">Home</NavLink>
+      <NavLink to="/Contact">Contact</NavLink>
+      <NavLink to="/Cart">
+        <AiOutlineShoppingCart size="28" />
+      </NavLink>
+    </StyledNavBar>
   );
 };
 

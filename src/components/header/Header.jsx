@@ -1,12 +1,16 @@
-import React from "react";
+import { StyledHeader,Logo } from "../styles/Header.styled";
+
+// import { StyledContainer } from "../styles/Container.styled";
+// import { Flex } from "../styles/Flex.styled";
+
 import NavBar from "../navBar/NavBar";
 
 const Header = () => {
   return (
-    <div className="header">
-      <h1>la-Boutique</h1>
+    <StyledHeader>
+      <Logo src="./images/logo.jpg"alt ="logo" />
       <NavBar />
-    </div>
+    </StyledHeader>
   );
 };
 
