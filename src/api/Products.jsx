@@ -1,6 +1,7 @@
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { StyledContainer } from "../components/styles/Container.styled";
-import { StyledCard } from "../components/styles/Card.styled";
+// import { StyledCard } from "../components/styles/Card.styled";
+import Card from "../components/card/Card.jsx";
 
 import useApi from "./ApiHooks";
 
@@ -21,25 +22,8 @@ const Products = () => {
 
   return (
     <StyledContainer>
-      {products.map((product) => (
-        <StyledCard key={product.id}>
-          <Link to={`/Product/${product.id}`}>
-            <div className="card-image">
-              <img src={product.imageUrl} alt={product.title} />
-            </div>
-            <div>
-              <h2>{product.title}</h2>
-              <p>{product.description}</p>
-            </div>
-            <div>
-              <p>{product.price}</p>
-              <p>{product.discountedPrice}</p>
-            </div>
-            <div>
-              <button>View</button>
-            </div>
-          </Link>
-        </StyledCard>
+      {products.map((product, index) => (
+        <Card key={index} product={product} />
       ))}
     </StyledContainer>
   );
