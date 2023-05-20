@@ -1,10 +1,14 @@
-import React from 'react'
+import { StyledContainer } from "../styles/Container.styled";
+import { StyledSearch } from "../styles/Search.styled";
 
 const Search = () => {
   return (
-    <div>
+    <StyledContainer>
+      < StyledSearch>
       <input type="search" placeholder="Search" />
-    </div>
+      <button>Search</button>
+      </StyledSearch>
+    </StyledContainer>
   )
 }
 
