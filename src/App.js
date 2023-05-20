@@ -37,9 +37,9 @@ function App() {
           <Routes>
             <Route path="/" element={<BaseLayOut />}>
               <Route index element={<Home />} />
+              <Route path="Product/:id" element={<Product />} />
               <Route path="Contact" element={<Contact />} />
               <Route path="Cart" element={<Cart />} />
-              <Route path="Product/:id" element={<Product />} />
               <Route path="*" element={<NotFound />} />
             </Route>
           </Routes>
