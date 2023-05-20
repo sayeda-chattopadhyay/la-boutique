@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { StyledContainer } from "../components/styles/Container.styled";
+import Card from "../components/card/Card";
 
 const Product = () => {
-  const [data, setData] = useState(null);
+  const [product, setProduct] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
   let { id } = useParams();
@@ -16,7 +18,7 @@ const Product = () => {
         const response = await fetch(url);
         const json = await response.json();
 
-        setData(json);
+        setProduct(json);
       } catch (error) {
         console.log(error);
       } finally {
@@ -27,7 +29,7 @@ const Product = () => {
     getData(`https://api.noroff.dev/api/v1/online-shop/${id}`);
   }, [id]);
 
-  if (isLoading || !data) {
+  if (isLoading || !product) {
     return <div>Loading</div>;
   }
 
@@ -35,28 +37,12 @@ const Product = () => {
     return <div>Error</div>;
   }
 
-  console.log(data);
+  console.log(product);
 
   return (
-    <div>
-      <div>
-        <img src={data.imageUrl} alt={data.title} />
-      </div>
-      <div>
-        <h2>{data.title}</h2>
-        <p>{data.description}</p>
-      </div>
-      <div>
-        <p>{data.price}</p>
-        <p>{data.discountedPrice}</p>
-      </div>
-      <div>
-        <p>{data.tags}</p>
-      </div>
-      <div>
-        <p>{data.ratings}</p>
-      </div>
-    </div>
+    <StyledContainer>
+      <Card product={product} />
+    </StyledContainer>
   );
 };
 
