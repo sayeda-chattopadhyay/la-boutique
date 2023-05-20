@@ -1,7 +1,6 @@
-import "./App.css";
+import { ThemeProvider } from "styled-components";
+// import { GlobalStyles } from "./components/GlobalStyles";
 import { Routes, Route } from "react-router-dom";
-
-
 
 // layout
 
@@ -14,24 +13,39 @@ import Contact from "./pages/Contact";
 import Cart from "./pages/Cart";
 import NotFound from "./pages/NotFound";
 
+// Api call- Fetch data
 
-// Api
+import Product from "./api/Product";
 
-// import FetchSingleProduct from "./components/FetchSingleProduct";
+// App component
+
+const theme = {
+  colors: {
+    // header: "#ebfbff",
+    body: "#2b3452",
+    footer: "#003333",
+  },
+
+  mobile: "768px",
+};
 
 function App() {
   return (
-    <div className="App">
-      <Routes>
-        <Route path="/" element={<BaseLayOut />}>
-          <Route index element={<Home />}/>
-
-          <Route path="/Contact" element={<Contact />} />
-          <Route path="/Cart" element={<Cart />} />
-          <Route path="*" element={<NotFound />} />
-        </Route>
-      </Routes>
-    </div>
+    <ThemeProvider theme={theme}>
+      <>
+        <div className="App">
+          <Routes>
+            <Route path="/" element={<BaseLayOut />}>
+              <Route index element={<Home />} />
+              <Route path="Contact" element={<Contact />} />
+              <Route path="Cart" element={<Cart />} />
+              <Route path="Product/:id" element={<Product />} />
+              <Route path="*" element={<NotFound />} />
+            </Route>
+          </Routes>
+        </div>
+      </>
+    </ThemeProvider>
   );
 }
 
