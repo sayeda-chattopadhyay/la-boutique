@@ -21,7 +21,6 @@ import Product from "./api/Product";
 
 const theme = {
   colors: {
-    header: "#ebfbff",
     body: "#2b3452",
     footer: "#003333",
   },
