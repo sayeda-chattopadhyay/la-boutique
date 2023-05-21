@@ -7,15 +7,15 @@ const Footer = () => {
   return (
     <StyledFooter>
       <StyledContainer>
+        <img src="" alt="logo" />
         <Flex>
-          <img src="" alt="logo" />
           <ul>
             <li>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua
             </li>
-            <li>+1-543-123-4567</li>
-            <li>example@huddle.com</li>
+            <li>+47-5412-4567</li>
+            <li>example@laboutique.com</li>
           </ul>
           <ul>
             <li>About Us</li>
@@ -29,7 +29,7 @@ const Footer = () => {
           </ul>
           <SocialIcons />
         </Flex>
-        <p>&copy; 2021 Huddle. All rights reserved</p>
+        <p>&copy; 2023 la boutique. All rights reserved</p>
       </StyledContainer>
     </StyledFooter>
   );
