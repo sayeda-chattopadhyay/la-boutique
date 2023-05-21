@@ -1,5 +1,5 @@
 import { ThemeProvider } from "styled-components";
-// import { GlobalStyles } from "./components/GlobalStyles";
+import  GlobalStyles  from "./components/styles/Global.styled";
 import { Routes, Route } from "react-router-dom";
 
 // layout
@@ -21,7 +21,7 @@ import Product from "./api/Product";
 
 const theme = {
   colors: {
-    // header: "#ebfbff",
+    header: "#ebfbff",
     body: "#2b3452",
     footer: "#003333",
   },
@@ -33,7 +33,9 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <>
+     
         <div className="App">
+        <GlobalStyles />
           <Routes>
             <Route path="/" element={<BaseLayOut />}>
               <Route index element={<Home />} />
