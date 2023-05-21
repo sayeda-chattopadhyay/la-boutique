@@ -13,4 +13,9 @@ export const StyledBanner = styled.div`
   p {
     max-width: 500px;
   }
+
+  @media (max-width: ${({ theme }) => theme.mobile}) {
+    flex-direction: column;
+    flex-direction: column-reverse;
+  }
 `;
