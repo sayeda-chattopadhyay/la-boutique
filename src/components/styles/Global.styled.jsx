@@ -5,16 +5,16 @@ const GlobalStyles = createGlobalStyle`
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
 
 
-// :root {
-//   --primary: #bc4123;
-//   --secondary: #2b3452;
-// }
+* {
+  box-sizing: border-box;
+}
 
 body {
+  background: ${({ theme }) => theme.colors.body};
   margin: 0;
   padding: 20px;
   font-family: "Poppins", sans-serif;
-  background: ${({ theme }) => theme.colors.body};
+  font-size: 1.15rem;
 }
 * {
   color: #fff;

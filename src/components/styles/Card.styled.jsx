@@ -21,4 +21,8 @@ export const StyledCard = styled.div`
     height: 400px;
     object-fit: cover;
   }
+
+  @media (max-width: ${({ theme }) => theme.mobile}) {
+    flex-direction: column;
+  }
 `;
