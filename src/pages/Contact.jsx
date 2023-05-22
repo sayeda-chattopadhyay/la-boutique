@@ -1,9 +1,14 @@
-import React from 'react'
+import { StyledContainer } from "../components/styles/Container.styled";
+import ContactForm from "../components/contactForm/ContactForm";
 
 const Contact = () => {
   return (
-    <div>Contact Page</div>
-  )
-}
+    <div>
+      <StyledContainer>
+        <ContactForm />
+      </StyledContainer>
+    </div>
+  );
+};
 
-export default Contact
+export default Contact;
