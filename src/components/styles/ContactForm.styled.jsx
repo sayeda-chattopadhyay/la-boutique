@@ -9,22 +9,19 @@ export const StyledContactForm = styled.form`
     margin-bottom: 30px;
   }
 
-  & > div label {
-    font-weight: bold;
-    margin-bottom: 30px;
-  }
-
   input,
   textarea {
+    margin-top: 5px;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
     width: 100%;
+    color: ${({ theme }) => theme.colors.body};
   }
 
   p {
     margin-top: 5px;
-    color: green;
+    color: #c2c0f9; // error message color
   }
 
   input[type="submit"] {
@@ -37,11 +34,8 @@ export const StyledContactForm = styled.form`
     font-weight: bold;
 
     &:hover {
-      background-color: red;
+      background-color: #8e8be2;
+      transform: scale(0.98);
     }
-  }
-
-  input[type="submit"]:hover {
-    background-color: red;
   }
 `;
