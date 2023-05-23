@@ -1,5 +1,4 @@
-// import { Flex } from "../styles/Flex.styled";
-// import { StyledContainer } from "../styles/Container.styled";
+
 import { StyledBanner } from "../styles/Banner.styled";
 
 const Banner = () => {
@@ -16,7 +15,7 @@ const Banner = () => {
         </p>
         <button>Explore</button>
       </div>
-      <div>
+      <div className="banner-image">
         <img src="./images/banner.jpg" alt="Banner" />
       </div>
     </StyledBanner>
