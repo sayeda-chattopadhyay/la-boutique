@@ -2,7 +2,7 @@ import { createGlobalStyle } from "styled-components";
 
 const GlobalStyles = createGlobalStyle`
 
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+// @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
 
 
 * {
@@ -17,7 +17,7 @@ body {
   font-size: 1.15rem;
 }
 * {
-  color: #fff;
+  color: ${({ theme }) => theme.colors.text};
   margin: 0;
 }
 p {
@@ -30,6 +30,15 @@ img {
   height: auto;
 }
 
+input,
+  textarea {
+    margin-top: 5px auto 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    color: ${({ theme }) => theme.colors.body};
+  }
 `;
 
 export default GlobalStyles;
