@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { StyledContainer } from "../components/styles/Container.styled";
 import Card from "../components/card/Card";
 import useApi from "./ApiHooks";
+import { StyledContainer } from "../components/styles/Container.styled";
+import { StyledSearch } from "../components/styles/Search.styled";
 
 const url = "https://api.noroff.dev/api/v1/online-shop";
 
@@ -22,13 +23,17 @@ const Products = () => {
 
   return (
     <>
-      <StyledContainer>
+      <StyledSearch>
         <input
           onChange={(e) => setSearch(e.target.value)}
           type="search"
           placeholder="Search"
         />
-      </StyledContainer>
+      </StyledSearch>
+      <div>
+      <h2>Products</h2>
+      </div>
+     
       <StyledContainer>
         {products
           .filter((product) => {
