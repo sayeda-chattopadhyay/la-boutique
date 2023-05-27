@@ -21,6 +21,14 @@ export const StyledCard = styled.div`
     height: 400px;
     object-fit: cover;
   }
+  
+  .discount-percentage {
+    position: absolute;
+    background-color: red;
+    color: #fff;
+  }
+
+ 
 
   @media (max-width: ${({ theme }) => theme.mobile}) {
     flex-direction: column;
