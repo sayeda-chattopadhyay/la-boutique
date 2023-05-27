@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { StyledContainer } from "../components/styles/Container.styled";
-import Card from "../components/card/Card";
+import ProductCard from "../components/card/ProductCard";
 
 const Product = () => {
   const [product, setProduct] = useState(null);
@@ -41,7 +41,7 @@ const Product = () => {
 
   return (
     <StyledContainer>
-      <Card product={product} />
+      <ProductCard product={product} />
     </StyledContainer>
   );
 };

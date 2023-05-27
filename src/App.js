@@ -9,13 +9,10 @@ import BaseLayOut from "./layouts/BaseLayout";
 // pages
 
 import Home from "./pages/Home";
+import ProductPage from "./pages/ProductPage";
 import Contact from "./pages/Contact";
 import Cart from "./pages/Cart";
 import NotFound from "./pages/NotFound";
-
-// Api call- Fetch data
-
-import Product from "./api/Product";
 
 // App component
 
@@ -38,9 +35,9 @@ function App() {
           <Routes>
             <Route path="/" element={<BaseLayOut />}>
               <Route index element={<Home />} />
-              <Route path="Product/:id" element={<Product />} />
-              <Route path="Contact" element={<Contact />} />
+              <Route path="Product/:id" element={<ProductPage />} />
               <Route path="Cart" element={<Cart />} />
+              <Route path="Contact" element={<Contact />} />
               <Route path="*" element={<NotFound />} />
             </Route>
           </Routes>
