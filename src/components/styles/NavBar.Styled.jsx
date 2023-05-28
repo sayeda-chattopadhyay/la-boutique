@@ -24,3 +24,6 @@ export const StyledNavBar = styled.nav`
     color: #2b3452;
   }
 `;
+
+
+
