@@ -1,6 +1,9 @@
 import { StyledCard } from "../../components/styles/Card.styled";
-import { StyledButton } from "../../components/styles/Button.styled";
+// import { StyledButton } from "../../components/styles/Button.styled";
 import { Link } from "react-router-dom";
+// import { useContext } from "react";
+// import { CartContext } from "../../CartContext";
+import { Button } from "react-bootstrap";
 
 export default function Card({
   product: { id, imageUrl, title, description, price, discountedPrice },
@@ -12,6 +15,7 @@ export default function Card({
           <div className="card-image">
             <img src={imageUrl} alt={title} />
           </div>
+
           <div>
             <h2>{title}</h2>
             <p>{description}</p>
@@ -21,7 +25,7 @@ export default function Card({
             <p>{discountedPrice}</p>
           </div>
           <div>
-            <StyledButton>View Item</StyledButton>
+            <Button>View Item</Button>
           </div>
         </Link>
       </StyledCard>
