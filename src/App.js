@@ -14,6 +14,9 @@ import Contact from "./pages/Contact";
 import Cart from "./pages/Cart";
 import NotFound from "./pages/NotFound";
 
+// cart context
+import CartProvider from "./CartContext.jsx";
+
 // App component
 
 const theme = {
@@ -28,22 +31,24 @@ const theme = {
 
 function App() {
   return (
+    <CartProvider>
     <ThemeProvider theme={theme}>
       <>
         <div className="App">
-          <GlobalStyles />
-          <Routes>
-            <Route path="/" element={<BaseLayOut />}>
-              <Route index element={<Home />} />
-              <Route path="Product/:id" element={<ProductPage />} />
-              <Route path="Cart" element={<Cart />} />
-              <Route path="Contact" element={<Contact />} />
-              <Route path="*" element={<NotFound />} />
-            </Route>
-          </Routes>
+            <GlobalStyles />
+            <Routes>
+              <Route path="/" element={<BaseLayOut />}>
+                <Route index element={<Home />} />
+                <Route path="Product/:id" element={<ProductPage />} />
+                <Route path="Cart" element={<Cart />} />
+                <Route path="Contact" element={<Contact />} />
+                <Route path="*" element={<NotFound />} />
+              </Route>
+            </Routes>
         </div>
       </>
     </ThemeProvider>
+    </CartProvider>
   );
 }
 
