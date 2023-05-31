@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <StyledFooter>
       <StyledContainer>
-        <img src="" alt="logo" />
+        <h2>la boutique</h2>
         <Flex>
           <ul>
             <li>

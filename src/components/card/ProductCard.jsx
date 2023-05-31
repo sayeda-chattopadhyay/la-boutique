@@ -18,6 +18,7 @@ export default function ProductCard({
 }) {
   const cart = useContext(CartContext);
   const productQuantity = cart.getProductQuantity(id);
+  
   console.log(productQuantity);
   console.log(cart.items);
 
