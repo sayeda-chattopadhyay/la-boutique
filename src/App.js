@@ -35,9 +35,9 @@ const theme = {
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <ProductListProvider>
-        <CartProvider>
+    <ProductListProvider>
+      <CartProvider>
+        <ThemeProvider theme={theme}>
           <>
             <div className="App">
               <GlobalStyles />
@@ -54,9 +54,9 @@ function App() {
               </Routes>
             </div>
           </>
-        </CartProvider>
-      </ProductListProvider>
-    </ThemeProvider>
+        </ThemeProvider>
+      </CartProvider>
+    </ProductListProvider>
   );
 }
 
