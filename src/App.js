@@ -15,6 +15,8 @@ import ProductPage from "./pages/ProductPage";
 import Contact from "./pages/Contact";
 import Cart from "./pages/Cart";
 import NotFound from "./pages/NotFound";
+import Checkout from "./pages/Checkout";
+import CheckoutSuccess from "./pages/CheckoutSuccess";
 
 // cart context
 // import CartProvider from "./CartContext.jsx";
@@ -34,9 +36,8 @@ const theme = {
 function App() {
   return (
     <ThemeProvider theme={theme}>
-    <ProductListProvider>
-      <CartProvider>
-        
+      <ProductListProvider>
+        <CartProvider>
           <>
             <div className="App">
               <GlobalStyles />
@@ -45,15 +46,16 @@ function App() {
                   <Route index element={<Home />} />
                   <Route path="Product/:id" element={<ProductPage />} />
                   <Route path="Cart" element={<Cart />} />
+                  <Route path="Checkout" element={<Checkout />} />
+                  <Route path="CheckoutSuccess" element={<CheckoutSuccess />} />
                   <Route path="Contact" element={<Contact />} />
                   <Route path="*" element={<NotFound />} />
                 </Route>
               </Routes>
             </div>
           </>
-        
-      </CartProvider>
-    </ProductListProvider>
+        </CartProvider>
+      </ProductListProvider>
     </ThemeProvider>
   );
 }
