@@ -1,19 +1,35 @@
-import { createContext, useState } from "react";
-// import { useEffect } from "react";
-import { getProductData } from "./api/Data/getProductsData";
+import { createContext, useState , useContext} from "react";
+//import { useEffect } from "react";
+//import { getProductData } from "./api/Data/getProductsData";
 
 export const CartContext = createContext({
   items: [],
   getProductQuantity: () => {},
+  calculateProductsCount: () => {},
   addOneToCart: () => {},
   removeOneFromCart: () => {},
   deleteFromCart: () => {},
   getTotalCost: () => {},
+
   // total: () => {},
 });
 
 export function CartProvider({ children }) {
   const [cartProducts, setCartProducts] = useState([]);
+  console.log(cartProducts);
+
+  // total number of products in cart
+
+  // const [productsCount, setproductsCount] = useState(0);
+
+  // useEffect(() => {
+  //   if (cartProducts) {
+  //     const count = cartProducts.reduce((acc, currentItem) => {
+  //       return acc + currentItem.count;
+  //     }, 0);
+  //     setproductsCount(count);
+  //   }
+  // }, [cartProducts]);
 
   // calculate total cost
   // const [total, setTotal] = useState(0);
@@ -32,10 +48,19 @@ export function CartProvider({ children }) {
     removeOneFromCart,
     deleteFromCart,
     getTotalCost,
+    calculateProductsCount,
+
     // total,
+    // productsCount: productsCount,
   };
 
   // get product quantity
+
+  function calculateProductsCount() {
+    return cartProducts.reduce((sum, item) => sum + item.quantity, 0);
+  }
+
+  // check if product is in cart and return quantity
 
   function getProductQuantity(id) {
     const quantity = cartProducts.find(
@@ -49,9 +74,9 @@ export function CartProvider({ children }) {
     return quantity;
   }
 
-  // add one to cart
+  // add one to cart takes in id, price, title,price, discountedPrice and returns quantity
 
-  function addOneToCart(id) {
+  function addOneToCart(id, title, imageUrl, price, discountedPrice) {
     const quantity = getProductQuantity(id);
 
     if (quantity === 0) {
@@ -59,13 +84,16 @@ export function CartProvider({ children }) {
       setCartProducts([
         ...cartProducts,
         {
-          id: id,
           quantity: 1,
+          id: id,
+          title: title,
+          imageUrl: imageUrl,
+          price: price,
+          discountedPrice: discountedPrice,
         },
       ]);
     } else {
       // product is in cart
-
       setCartProducts(
         cartProducts.map(
           (product) =>
@@ -107,13 +135,26 @@ export function CartProvider({ children }) {
     );
   }
 
+  // function getTotalCost() {
+  //   let totalCost = 0;
+  //   cartProducts.forEach((cartItem, index) => {
+  //     //const productData = getProductData(cartItem.id);
+  //     totalCost += cartItem.price * cartItem.quantity;
+  //   });
+  //   console.log(totalCost);
+  //   return totalCost;
+  // }
+
+  // The total price for the Cart contents
   function getTotalCost() {
     let totalCost = 0;
-    cartProducts.forEach((cartItem, index) => {
-      const productData = getProductData(cartItem.id);
-      totalCost += productData.price * cartItem.quantity;
+    cartProducts.forEach((cartItem) => {
+      let productPrice = cartItem.discountedPrice;
+      if (!cartItem.discountedPrice) {
+        productPrice = cartItem.price;
+      }
+      totalCost += productPrice * cartItem.quantity;
     });
-    console.log(totalCost);
     return totalCost;
   }
 
@@ -123,3 +164,8 @@ export function CartProvider({ children }) {
 }
 
 export default CartProvider;
+
+
+export function useCartContext() {
+  return useContext(CartContext);
+}
