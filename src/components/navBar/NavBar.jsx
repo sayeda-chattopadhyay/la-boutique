@@ -1,24 +1,18 @@
-import { Navbar, Nav, Button, Modal } from "react-bootstrap";
+import { Navbar, Nav } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { AiOutlineShoppingCart } from "react-icons/ai";
-import { useState, useContext } from "react";
+import { useContext } from "react";
 import { CartContext } from "../../CartContext";
-import CartProduct from "../cart/CartProduct";
+//import CartProduct from "../cart/CartProduct";
 
 function NavbarComponent() {
+  
   const cart = useContext(CartContext);
+  const productsCount = cart.calculateProductsCount();
 
-  console.log(cart.items);
-
-  const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-
-  // total number of products in cart
-  const productsCount = cart.items.reduce(
-    (sum, item) => sum + item.quantity,
-    0
-  );
+  // const [show, setShow] = useState(false);
+  // const handleClose = () => setShow(false);
+  // const handleShow = () => setShow(true);
 
   return (
     <>
@@ -38,14 +32,20 @@ function NavbarComponent() {
             <Nav.Link href="/Contact" className="text-white">
               Contact
             </Nav.Link>
-            <Button variant="info" onClick={handleShow}>
+            <Nav.Link href="/Cart" className="text-white">
+              <AiOutlineShoppingCart className="cart-icon" />
+              {productsCount}
+              {/* {cart.calculateProductsCount()} */}
+            </Nav.Link>
+            {/* <Button variant="info" onClick={handleShow}>
               {productsCount}
               <AiOutlineShoppingCart />
-            </Button>
+            </Button> */}
           </Nav>
         </Navbar.Collapse>
       </Navbar>
-      <Modal show={show} onHide={handleClose}>
+
+      {/* <Modal show={show} onHide={handleClose}>
         <div>
           <Modal.Header closeButton className="bg-dark">
             <Modal.Title>Shopping Cart</Modal.Title>
@@ -58,7 +58,9 @@ function NavbarComponent() {
                   <CartProduct
                     key={idx}
                     id={currentProduct.id}
+                    title={currentProduct.title} // title doesn't come
                     quantity={currentProduct.quantity}
+                    price={currentProduct.price}
                   ></CartProduct>
                 ))}
 
@@ -71,7 +73,7 @@ function NavbarComponent() {
             )}
           </Modal.Body>
         </div>
-      </Modal>
+      </Modal> */}
     </>
   );
 }

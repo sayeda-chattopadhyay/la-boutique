@@ -34,14 +34,14 @@ const Product = () => {
   }
 
   if (isError) {
-    return <div>Error</div>;
+    return <div>There is an error</div>;
   }
 
   console.log(product);
 
   return (
     <StyledContainer>
-      <ProductCard product={product} />
+      <ProductCard data={product} />
     </StyledContainer>
   );
 };

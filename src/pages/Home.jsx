@@ -1,12 +1,15 @@
 import Banner from "../components/banner/Banner";
+import { ProductListProvider } from "../ProductListContext";
 
 import Products from "../api/Products";
 
 const Home = () => {
   return (
     <div className="home">
-      <Banner />
-      <Products />
+      <ProductListProvider>
+        <Banner />
+        <Products />
+      </ProductListProvider>
     </div>
   );
 };

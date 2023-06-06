@@ -24,3 +24,5 @@ const CartProduct = (props) => {
 };
 
 export default CartProduct;
+
+

@@ -20,6 +20,7 @@ const Products = () => {
   }
 
   const products = data;
+  console.log(products);
 
   return (
     <>
@@ -31,9 +32,9 @@ const Products = () => {
         />
       </StyledSearch>
       <div>
-      <h2>Products</h2>
+        <h2>Products</h2>
       </div>
-     
+
       <StyledContainer>
         {products
           .filter((product) => {
@@ -50,6 +51,3 @@ const Products = () => {
 };
 
 export default Products;
-
-
-

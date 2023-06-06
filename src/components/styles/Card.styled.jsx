@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledCard = styled.div`
-  border: 1px solid #fff;
+  border: 0.2px solid #fff;
   max-width: 400px;
   width: 100%;
   display: flex;
@@ -21,14 +21,21 @@ export const StyledCard = styled.div`
     height: 400px;
     object-fit: cover;
   }
-  
+
   .discount-percentage {
     position: absolute;
     background-color: red;
     color: #fff;
   }
 
- 
+  .link {
+    text-decoration: none;
+  }
+
+  &:hover {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    transform: scale(1.02);
+  }
 
   @media (max-width: ${({ theme }) => theme.mobile}) {
     flex-direction: column;

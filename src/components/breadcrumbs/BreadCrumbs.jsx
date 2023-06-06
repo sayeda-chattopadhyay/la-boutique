@@ -1,9 +1,14 @@
-import React from 'react'
+import React from "react";
+import { Link } from "react-router-dom";
 
 const BreadCrumbs = () => {
   return (
-    <div>BreadCrumbs</div>
-  )
-}
+    <>
+      <Link to="/" className="back-link">
+        Back
+      </Link>
+    </>
+  );
+};
 
-export default BreadCrumbs
+export default BreadCrumbs;

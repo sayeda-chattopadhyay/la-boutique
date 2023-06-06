@@ -1,4 +1,22 @@
-// import {
+
+import CartComponent from "../components/cart/CartComponent";
+
+const Cart = () => {
+  return <CartComponent />;
+};
+
+export default Cart;
+
+
+
+
+
+
+
+
+
+// **************
+//import {
 //   AiOutlinePlusSquare,
 //   AiOutlineMinusSquare,
 //   //   AiOutlineArrowLeft,
@@ -76,12 +94,3 @@
 
 // export default Cart
 
-import React from 'react'
-
-const Cart = () => {
-  return (
-    <div>Cart</div>
-  )
-}
-
-export default Cart

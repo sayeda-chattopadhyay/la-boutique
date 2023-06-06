@@ -27,6 +27,15 @@ img {
   height: auto;
 }
 
+Link,
+.back-link{
+  text-decoration: none;
+}
+
+.back-link{
+  margin-top: 100px;
+  color: ${({ theme }) => theme.colors.text};
+}
 
 
 input,
@@ -38,6 +47,12 @@ input,
     width: 100%;
     color: ${({ theme }) => theme.colors.body};
   }
+.cart-icon{
+  font-size: 1.5rem;
+}
+
+
+
 `;
 
 export default GlobalStyles;

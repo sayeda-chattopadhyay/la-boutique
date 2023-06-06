@@ -8,7 +8,7 @@ export const StyledBanner = styled.div`
   align-items: center;
   justify-content: space-between;
   gap: 20px;
-  height: 60vh;
+  height: 100vh;
 
   p {
     max-width: 500px;
@@ -32,9 +32,5 @@ export const StyledBanner = styled.div`
   @media (max-width: ${({ theme }) => theme.mobile}) {
     flex-direction: column;
     flex-direction: column-reverse;
-  }
-
-  .banner-image {
-    height: 50vh;
   }
 `;

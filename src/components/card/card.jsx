@@ -11,7 +11,7 @@ export default function Card({
   return (
     <>
       <StyledCard key={id}>
-        <Link to={`/Product/${id}`}>
+        <Link to={`/Product/${id}`} className= "link">
           <div className="card-image">
             <img src={imageUrl} alt={title} />
           </div>
