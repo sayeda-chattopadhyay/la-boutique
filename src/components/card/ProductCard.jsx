@@ -4,7 +4,7 @@ import ProductReviews from "../../components/review/ProductReviews";
 import { useContext } from "react";
 import { CartContext } from "../../CartContext";
 import { Button, Form, Row, Col } from "react-bootstrap";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 // import { formatCurrency } from "../../helper/PriceFormat";
 
@@ -111,7 +111,7 @@ export default function ProductCard({ data }) {
             >
               Add To Cart
             </Button>
-            <Link to="/cart">Go to Cart</Link>
+            {/* <Link to="/cart">Go to Cart</Link> */}
           </>
         )}
       </StyledCard>
