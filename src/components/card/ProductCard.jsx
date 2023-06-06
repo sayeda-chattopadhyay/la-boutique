@@ -4,23 +4,20 @@ import ProductReviews from "../../components/review/ProductReviews";
 import { useContext } from "react";
 import { CartContext } from "../../CartContext";
 import { Button, Form, Row, Col } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
-export default function ProductCard({
-  product: {
-    id,
-    imageUrl,
-    title,
-    description,
-    price,
-    discountedPrice,
-    reviews,
-  },
-}) {
+// import { formatCurrency } from "../../helper/PriceFormat";
+
+export default function ProductCard({ data }) {
   const cart = useContext(CartContext);
-  const productQuantity = cart.getProductQuantity(id);
-  
-  console.log(productQuantity);
-  console.log(cart.items);
+  const productQuantity = cart.getProductQuantity(data.id);
+
+  console.log("productQuantity:", productQuantity);
+
+  console.log("items in the cart :", cart.items);
+
+  const { id, title, imageUrl, description, reviews, price, discountedPrice } =
+    data;
 
   function calculateDiscountPercentage(price, discountedPrice) {
     if (price && discountedPrice) {
@@ -54,17 +51,28 @@ export default function ProductCard({
           <p>Price: {price}</p>
           <p>Discounted Price: {discountedPrice}</p>
         </div>
+        {/* <div>{reviews && reviews.rating}</div>
+        <div className="p-3">Tags #{tags}</div> */}
+        {/* <div className="">Hello:{formatCurrency(discountedPrice)}</div> */}
         <ProductReviews reviews={reviews} />
         {productQuantity > 0 ? (
           <>
             <Form as={Row}>
               <Form.Label column="true" sm="6">
-                 {productQuantity} {title} added to cart
+                {productQuantity} {title} added to cart
               </Form.Label>
               <Col sm="6">
                 <Button
                   sm="6"
-                  onClick={() => cart.addOneToCart(id)}
+                  onClick={() =>
+                    cart.addOneToCart(
+                      data.id,
+                      data.title,
+                      data.imageUrl,
+                      data.price,
+                      data.discountedPrice
+                    )
+                  }
                   className="mx-2"
                 >
                   +
@@ -88,15 +96,24 @@ export default function ProductCard({
             </Button>
           </>
         ) : (
-          <Button variant="primary" onClick={() => cart.addOneToCart(id)}>
-            Add To Cart
-          </Button>
+          <>
+            <Button
+              variant="primary"
+              onClick={() =>
+                cart.addOneToCart(
+                  data.id,
+                  data.title,
+                  data.imageUrl,
+                  data.price,
+                  data.discountedPrice
+                )
+              }
+            >
+              Add To Cart
+            </Button>
+            <Link to="/cart">Go to Cart</Link>
+          </>
         )}
-        {/* <div>
-          <StyledButton onClick={() => cart.addOneToCart(id)}>
-            Add to cart
-          </StyledButton>
-        </div> */}
       </StyledCard>
     </>
   );
