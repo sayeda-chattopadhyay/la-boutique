@@ -1,6 +1,5 @@
-import { createContext, useState, useContext } from "react";
-//import { useEffect } from "react";
-//import { getProductData } from "./api/Data/getProductsData";
+import { createContext, useContext } from "react";
+import useLocalStorage from "./localStorage/useLocalStorage";
 
 export const CartContext = createContext({
   items: [],
@@ -15,11 +14,24 @@ export const CartContext = createContext({
 });
 
 export function CartProvider({ children }) {
-  const [cartProducts, setCartProducts] = useState(
-    JSON.parse(localStorage.getItem("cartProducts")) || []
+  const [cartProducts, setCartProducts] = useLocalStorage("cartProducts", []);
+
+  // const [cartProducts, setCartProducts] = useState(
+  //   JSON.parse(localStorage.getItem("cartProducts")) || []
+  // );
+
+  const totalItems = cartProducts.reduce(
+    (count, item) => count + item.quantity,
+    0
+  );
+  const totalPrice = cartProducts.reduce(
+    (total, item) => total + item.price * item.quantity,
+    0
   );
 
   console.log(cartProducts);
+  console.log(totalItems);
+  console.log(totalPrice);
 
   const contextValue = {
     items: cartProducts,
@@ -31,7 +43,7 @@ export function CartProvider({ children }) {
     calculateProductsCount,
   };
 
-  // get product quantity
+  // calculate total Items in the cart
 
   function calculateProductsCount() {
     return cartProducts.reduce((sum, item) => sum + item.quantity, 0);
@@ -100,6 +112,7 @@ export function CartProvider({ children }) {
         )
       );
     }
+    localStorage.setItem("cartProducts", JSON.stringify(cartProducts));
   }
 
   // delete from cart
@@ -111,6 +124,7 @@ export function CartProvider({ children }) {
         return currentProduct.id !== id;
       })
     );
+    localStorage.setItem("cartProducts", JSON.stringify(cartProducts));
   }
 
   // The total price for the Cart contents
