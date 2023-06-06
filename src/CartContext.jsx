@@ -16,23 +16,6 @@ export const CartContext = createContext({
 export function CartProvider({ children }) {
   const [cartProducts, setCartProducts] = useLocalStorage("cartProducts", []);
 
-  // const [cartProducts, setCartProducts] = useState(
-  //   JSON.parse(localStorage.getItem("cartProducts")) || []
-  // );
-
-  const totalItems = cartProducts.reduce(
-    (count, item) => count + item.quantity,
-    0
-  );
-  const totalPrice = cartProducts.reduce(
-    (total, item) => total + item.price * item.quantity,
-    0
-  );
-
-  console.log(cartProducts);
-  console.log(totalItems);
-  console.log(totalPrice);
-
   const contextValue = {
     items: cartProducts,
     getProductQuantity,
@@ -49,7 +32,7 @@ export function CartProvider({ children }) {
     return cartProducts.reduce((sum, item) => sum + item.quantity, 0);
   }
 
-  // check if product is in cart and return quantity
+  // check if product is already in the cart and return quantity of the product
 
   function getProductQuantity(id) {
     const quantity = cartProducts.find(
@@ -150,3 +133,4 @@ export default CartProvider;
 export function useCartContext() {
   return useContext(CartContext);
 }
+
