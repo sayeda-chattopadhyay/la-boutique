@@ -1,9 +1,10 @@
-
 import React from "react";
 import { useCartContext } from "../../CartContext";
 
 export default function CartComponent() {
   const cart = useCartContext();
+
+  console.log("Items in the cart:", cart.items);
 
   const handleIncrease = (id) => {
     cart.addOneToCart(id);
@@ -45,9 +46,6 @@ export default function CartComponent() {
     </div>
   );
 }
-
-
-
 
 //*********** */
 // import { useCartContext } from "../../CartContext";

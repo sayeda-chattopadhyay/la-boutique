@@ -3,10 +3,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { useContext } from "react";
 import { CartContext } from "../../CartContext";
+import { Link } from "react-router-dom";
 //import CartProduct from "../cart/CartProduct";
 
 function NavbarComponent() {
-  
   const cart = useContext(CartContext);
   const productsCount = cart.calculateProductsCount();
 
@@ -26,17 +26,17 @@ function NavbarComponent() {
           className="justify-content-between text-white"
         >
           <Nav className="ms-auto">
-            <Nav.Link href="/" className="text-white">
+            <Link to="/" className="text-white">
               Home
-            </Nav.Link>
-            <Nav.Link href="/Contact" className="text-white">
+            </Link>
+            <Link to="/Contact" className="text-white">
               Contact
-            </Nav.Link>
-            <Nav.Link href="/Cart" className="text-white">
+            </Link>
+            <Link to="/Cart" className="text-white">
               <AiOutlineShoppingCart className="cart-icon" />
               {productsCount}
               {/* {cart.calculateProductsCount()} */}
-            </Nav.Link>
+            </Link>
             {/* <Button variant="info" onClick={handleShow}>
               {productsCount}
               <AiOutlineShoppingCart />
