@@ -1,20 +1,16 @@
-import { StyledCard } from "../styles/Card.styled";
-// import { StyledButton } from "../styles/Button.styled";
+import React, { useState } from "react";
+import { Button, Modal } from "react-bootstrap";
+import { StyledProductCard } from "../styles/ProductCard.styled";
 import ProductReviews from "../../components/review/ProductReviews";
 import { useContext } from "react";
 import { CartContext } from "../../CartContext";
-import { Button, Form, Row, Col } from "react-bootstrap";
-// import { Link } from "react-router-dom";
-
-// import { formatCurrency } from "../../helper/PriceFormat";
+import { formatCurrency } from "../../helper/PriceFormat";
 
 export default function ProductCard({ data }) {
   const cart = useContext(CartContext);
   const productQuantity = cart.getProductQuantity(data.id);
 
-  console.log("productQuantity:", productQuantity);
-
-  console.log("items in the cart :", cart.items);
+  const [showModal, setShowModal] = useState(false);
 
   const { id, title, imageUrl, description, reviews, price, discountedPrice } =
     data;
@@ -34,87 +30,62 @@ export default function ProductCard({ data }) {
     discountedPrice
   );
 
+  const addToCart = () => {
+    cart.addOneToCart(
+      data.id,
+      data.title,
+      data.imageUrl,
+      data.price,
+      data.discountedPrice
+    );
+    setShowModal(true);
+  };
+
   return (
     <>
-      <StyledCard key={id}>
-        <div className="card-image">
-          {discountPercentage > 0 && (
-            <div className="discount-percentage">{discountPercentage}% Off</div>
-          )}
-          <img src={imageUrl} alt={title} />
+      <StyledProductCard key={id}>
+        <div className="card-wrapper">
+          <div className="card-image">
+            {discountPercentage > 0 && (
+              <div className="discount-percentage">
+                {discountPercentage}% Off
+              </div>
+            )}
+            <img src={imageUrl} alt={title} />
+          </div>
+          <div className="card-content">
+            <h2>{title}</h2>
+            <p>{description}</p>
+            <div className="card-footer">
+              <p>Price: {formatCurrency(price)}</p>
+              <p>Discounted Price: {formatCurrency(discountedPrice)}</p>
+              <Button variant="primary" onClick={addToCart}>
+                Add To Cart
+              </Button>
+            </div>
+          </div>
         </div>
-        <div>
-          <h2>{title}</h2>
-          <p>{description}</p>
-        </div>
-        <div>
-          <p>Price: {price}</p>
-          <p>Discounted Price: {discountedPrice}</p>
-        </div>
-        {/* <div>{reviews && reviews.rating}</div>
-        <div className="p-3">Tags #{tags}</div> */}
-        {/* <div className="">Hello:{formatCurrency(discountedPrice)}</div> */}
         <ProductReviews reviews={reviews} />
-        {productQuantity > 0 ? (
-          <>
-            <Form as={Row}>
-              <Form.Label column="true" sm="6">
-                {productQuantity} {title} added to cart
-              </Form.Label>
-              <Col sm="6">
-                <Button
-                  sm="6"
-                  onClick={() =>
-                    cart.addOneToCart(
-                      data.id,
-                      data.title,
-                      data.imageUrl,
-                      data.price,
-                      data.discountedPrice
-                    )
-                  }
-                  className="mx-2"
-                >
-                  +
-                </Button>
-                {productQuantity}
-                <Button
-                  sm="6"
-                  onClick={() => cart.removeOneFromCart(id)}
-                  className="mx-2"
-                >
-                  -
-                </Button>
-              </Col>
-            </Form>
-            <Button
-              variant="danger"
-              onClick={() => cart.deleteFromCart(id)}
-              className="my-2"
-            >
-              Remove From Cart
-            </Button>
-          </>
-        ) : (
-          <>
-            <Button
-              variant="primary"
-              onClick={() =>
-                cart.addOneToCart(
-                  data.id,
-                  data.title,
-                  data.imageUrl,
-                  data.price,
-                  data.discountedPrice
-                )
-              }
-            >
-              Add To Cart
-            </Button>
-            {/* <Link to="/cart">Go to Cart</Link> */}
-          </>
-        )}
-      </StyledCard>
+      </StyledProductCard>
+
+      <Modal show={showModal} onHide={() => setShowModal(false)}>
+        <Modal.Header closeButton>
+          <Modal.Title>Product Added to Cart</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <p>
+            {productQuantity} {title} has been added to your cart.
+          </p>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={() => setShowModal(false)}>
+            Continue Shopping
+          </Button>
+          <Button variant="primary" href="/cart">
+            Go to Cart
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </>
   );
 }
