@@ -1,4 +1,4 @@
-import { StyledCard } from "../../components/styles/Card.styled";
+import { StyledCard } from "../styles/Card.styled";
 // import { StyledButton } from "../../components/styles/Button.styled";
 import { Link } from "react-router-dom";
 // import { useContext } from "react";
@@ -11,7 +11,7 @@ export default function Card({
   return (
     <>
       <StyledCard key={id}>
-        <Link to={`/Product/${id}`} className= "link">
+        <Link to={`/Product/${id}`} className="link">
           <div className="card-image">
             <img src={imageUrl} alt={title} />
           </div>
