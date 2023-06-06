@@ -1,4 +1,4 @@
-import { createContext, useState , useContext} from "react";
+import { createContext, useState, useContext } from "react";
 //import { useEffect } from "react";
 //import { getProductData } from "./api/Data/getProductsData";
 
@@ -15,31 +15,11 @@ export const CartContext = createContext({
 });
 
 export function CartProvider({ children }) {
-  const [cartProducts, setCartProducts] = useState([]);
+  const [cartProducts, setCartProducts] = useState(
+    JSON.parse(localStorage.getItem("cartProducts")) || []
+  );
+
   console.log(cartProducts);
-
-  // total number of products in cart
-
-  // const [productsCount, setproductsCount] = useState(0);
-
-  // useEffect(() => {
-  //   if (cartProducts) {
-  //     const count = cartProducts.reduce((acc, currentItem) => {
-  //       return acc + currentItem.count;
-  //     }, 0);
-  //     setproductsCount(count);
-  //   }
-  // }, [cartProducts]);
-
-  // calculate total cost
-  // const [total, setTotal] = useState(0);
-
-  // useEffect(() => {
-  //   const total = cartProducts.reduce((acc, item) => {
-  //     return acc + item.price * item.quantity;
-  //   }, 0);
-  //   setTotal(total);
-  // }, [cartProducts]);
 
   const contextValue = {
     items: cartProducts,
@@ -49,9 +29,6 @@ export function CartProvider({ children }) {
     deleteFromCart,
     getTotalCost,
     calculateProductsCount,
-
-    // total,
-    // productsCount: productsCount,
   };
 
   // get product quantity
@@ -103,6 +80,7 @@ export function CartProvider({ children }) {
         )
       );
     }
+    localStorage.setItem("cartProducts", JSON.stringify(cartProducts));
   }
 
   // remove one from cart
@@ -135,16 +113,6 @@ export function CartProvider({ children }) {
     );
   }
 
-  // function getTotalCost() {
-  //   let totalCost = 0;
-  //   cartProducts.forEach((cartItem, index) => {
-  //     //const productData = getProductData(cartItem.id);
-  //     totalCost += cartItem.price * cartItem.quantity;
-  //   });
-  //   console.log(totalCost);
-  //   return totalCost;
-  // }
-
   // The total price for the Cart contents
   function getTotalCost() {
     let totalCost = 0;
@@ -164,7 +132,6 @@ export function CartProvider({ children }) {
 }
 
 export default CartProvider;
-
 
 export function useCartContext() {
   return useContext(CartContext);
