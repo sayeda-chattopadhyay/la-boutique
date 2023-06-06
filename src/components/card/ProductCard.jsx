@@ -4,7 +4,6 @@ import { StyledProductCard } from "../styles/ProductCard.styled";
 import ProductReviews from "../../components/review/ProductReviews";
 import { useContext } from "react";
 import { CartContext } from "../../CartContext";
-import { formatCurrency } from "../../helper/PriceFormat";
 
 export default function ProductCard({ data }) {
   const cart = useContext(CartContext);
@@ -57,8 +56,8 @@ export default function ProductCard({ data }) {
             <h2>{title}</h2>
             <p>{description}</p>
             <div className="card-footer">
-              <p>Price: {formatCurrency(price)}</p>
-              <p>Discounted Price: {formatCurrency(discountedPrice)}</p>
+              <p>{price}</p>
+              <p>{discountedPrice}</p>
               <Button variant="primary" onClick={addToCart}>
                 Add To Cart
               </Button>

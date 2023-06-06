@@ -34,8 +34,11 @@ export default function CartComponent() {
                 <h3>{item.title}</h3>
 
                 <p>Quantity: {item.quantity}</p>
-                <p>Discounted Price: {item.discountedPrice}</p>
-                <p>Total Price: {item.discountedPrice * item.quantity}Nok</p>
+                <p>Discounted Price: Nok {item.discountedPrice}</p>
+                <p>
+                  Total Price:
+                  Nok {(item.discountedPrice * item.quantity).toFixed(2)} 
+                </p>
 
                 <button onClick={() => handleIncrease(item.id)}>+</button>
                 <button onClick={() => handleDecrease(item.id)}>-</button>
@@ -45,7 +48,9 @@ export default function CartComponent() {
           ))}
         </ul>
       )}
-      <p>Total Cost: {cart.getTotalCost()}</p>
+      <p>Total Cost: Nok {cart.getTotalCost().toFixed(2)}</p>
     </div>
   );
 }
+
+//<p>${ (quantity * productData.price).toFixed(2) }</p>
