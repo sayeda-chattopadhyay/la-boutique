@@ -1,6 +1,8 @@
 import { ThemeProvider } from "styled-components";
 import GlobalStyles from "./components/styles/Global.styled";
 import { Routes, Route } from "react-router-dom";
+import CartProvider from "./CartContext";
+import { ProductListProvider } from "./ProductListContext";
 
 // layout
 
@@ -15,7 +17,7 @@ import Cart from "./pages/Cart";
 import NotFound from "./pages/NotFound";
 
 // cart context
-import CartProvider from "./CartContext.jsx";
+// import CartProvider from "./CartContext.jsx";
 
 // App component
 
@@ -31,24 +33,28 @@ const theme = {
 
 function App() {
   return (
-    <CartProvider>
     <ThemeProvider theme={theme}>
-      <>
-        <div className="App">
-            <GlobalStyles />
-            <Routes>
-              <Route path="/" element={<BaseLayOut />}>
-                <Route index element={<Home />} />
-                <Route path="Product/:id" element={<ProductPage />} />
-                <Route path="Cart" element={<Cart />} />
-                <Route path="Contact" element={<Contact />} />
-                <Route path="*" element={<NotFound />} />
-              </Route>
-            </Routes>
-        </div>
-      </>
+    <ProductListProvider>
+      <CartProvider>
+        
+          <>
+            <div className="App">
+              <GlobalStyles />
+              <Routes>
+                <Route path="/" element={<BaseLayOut />}>
+                  <Route index element={<Home />} />
+                  <Route path="Product/:id" element={<ProductPage />} />
+                  <Route path="Cart" element={<Cart />} />
+                  <Route path="Contact" element={<Contact />} />
+                  <Route path="*" element={<NotFound />} />
+                </Route>
+              </Routes>
+            </div>
+          </>
+        
+      </CartProvider>
+    </ProductListProvider>
     </ThemeProvider>
-    </CartProvider>
   );
 }
 
