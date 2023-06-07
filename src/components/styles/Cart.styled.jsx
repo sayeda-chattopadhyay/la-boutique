@@ -1,4 +1,3 @@
-
 import styled from "styled-components";
 
 export const StyledCart = styled.div`
@@ -8,7 +7,6 @@ export const StyledCart = styled.div`
    max-width: 1200px;
    margin: 0 auto;
    padding: 20px;
-   border: 1px solid #ccc;
    display: flex;
    flex-wrap: wrap;
   }
@@ -18,16 +16,20 @@ export const StyledCart = styled.div`
     align-items: center;
     justify-content: space-between;
     width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  margin-bottom: 10px;
+    padding: 10px;
+    border: .5px solid #ccc;
+    margin-bottom: 10px;
+  }
+
+  .cart-item > div {
+    flex: 1;
   }
 
   .cart-item img {
     width: 200px;
     height: 200px;
     object-fit: cover;
-    margin-right: 10px;
+  
   }
   
   .cart-item h3 {
@@ -71,6 +73,11 @@ export const StyledCart = styled.div`
     font-size: 20px;
   }
 
+  .total-cost{
+    float: right;
+    margin-right: 120px;
+   font-size: 28px;
+  }
 
   /* Media query for small screens */
   @media (max-width: 768px) {

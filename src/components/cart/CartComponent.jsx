@@ -2,6 +2,7 @@ import React from "react";
 import { useCartContext } from "../../CartContext";
 import { StyledCart } from "../styles/Cart.styled";
 import { BsFillTrashFill } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 export default function CartComponent() {
   const cart = useCartContext();
@@ -64,13 +65,21 @@ export default function CartComponent() {
                 {/* <button onClick={() => handleRemove(item.id)}>
                   <RiDeleteBin2Line />
                 </button> */}
-                <BsFillTrashFill onClick={() => handleRemove(item.id)} className= "remove-btn"/ >
+                <BsFillTrashFill
+                  onClick={() => handleRemove(item.id)}
+                  className="remove-btn"
+                />
               </div>
             </div>
           ))}
         </div>
       )}
-      <p>Total Cost: Nok {cart.getTotalCost().toFixed(2)}</p>
+      <div className="total-cost">
+        Total Cost: Nok {cart.getTotalCost().toFixed(2)}
+      </div>
+      <Link to={"/checkout"}>
+        <button>Check out </button>
+      </Link>
     </StyledCart>
   );
 }

@@ -21,10 +21,10 @@ function NavbarComponent() {
             <Link to="/" className="text-white">
               Home
             </Link>
-            <Link to="/Contact" className="text-white">
+            <Link to="/Contact" className="text-white link-nav">
               Contact
             </Link>
-            <Link to="/Cart" className="text-white">
+            <Link to="/Cart" className="text-white link-nav">
               <AiOutlineShoppingCart className="cart-icon" />
               {productsCount}
             </Link>

@@ -51,7 +51,9 @@ input,
   font-size: 1.5rem;
 }
 
-
+.modal-text{
+  color: black
+}
 
 `;
 

@@ -4,6 +4,8 @@ export const StyledContactForm = styled.form`
   display: flex;
   flex-direction: column;
   max-width: 400px;
+  border: 1px solid #ccc;
+  padding: 20px;
 
   & > div {
     margin-bottom: 30px;
