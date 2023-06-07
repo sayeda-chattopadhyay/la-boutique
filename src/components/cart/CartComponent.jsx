@@ -1,5 +1,7 @@
 import React from "react";
 import { useCartContext } from "../../CartContext";
+import { StyledCart } from "../styles/Cart.styled";
+import { BsFillTrashFill } from "react-icons/bs";
 
 export default function CartComponent() {
   const cart = useCartContext();
@@ -19,37 +21,57 @@ export default function CartComponent() {
   };
 
   return (
-    <div>
+    <StyledCart>
       <h1>Cart</h1>
       {cart.items.length === 0 ? (
         <p>Your cart is empty.</p>
       ) : (
-        <ul>
+        <div className="cart-container">
           {cart.items.map((item) => (
-            <li key={item.id}>
+            <div key={item.id} className="cart-item">
               <div>
                 <img src={item.imageUrl} alt={item.title} />
               </div>
               <div>
                 <h3>{item.title}</h3>
-
-                <p>Quantity: {item.quantity}</p>
-                <p>Discounted Price: Nok {item.discountedPrice}</p>
+                <hr />
                 <p>
-                  Total Price:
-                  Nok {(item.discountedPrice * item.quantity).toFixed(2)} 
+                  <span className="big-text">Price :</span> Nok{" "}
+                  {item.discountedPrice}
                 </p>
-
-                <button onClick={() => handleIncrease(item.id)}>+</button>
-                <button onClick={() => handleDecrease(item.id)}>-</button>
-                <button onClick={() => handleRemove(item.id)}>Remove</button>
+                <p>
+                  <span className="big-text">Total : Nok </span>
+                  {(item.discountedPrice * item.quantity).toFixed(2)}
+                </p>
+                <hr />
+                <h5>Quantity: {item.quantity}</h5>
               </div>
-            </li>
+
+              <div className="btn">
+                <button
+                  onClick={() => handleIncrease(item.id)}
+                  className="btn-icon"
+                >
+                  +
+                </button>
+                <p>{item.quantity}</p>
+                <button
+                  onClick={() => handleDecrease(item.id)}
+                  className="btn-icon"
+                >
+                  -
+                </button>
+                {/* <button onClick={() => handleRemove(item.id)}>
+                  <RiDeleteBin2Line />
+                </button> */}
+                <BsFillTrashFill onClick={() => handleRemove(item.id)} className= "remove-btn"/ >
+              </div>
+            </div>
           ))}
-        </ul>
+        </div>
       )}
       <p>Total Cost: Nok {cart.getTotalCost().toFixed(2)}</p>
-    </div>
+    </StyledCart>
   );
 }
 
