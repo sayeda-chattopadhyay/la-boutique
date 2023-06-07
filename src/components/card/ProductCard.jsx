@@ -72,7 +72,7 @@ export default function ProductCard({ data }) {
           <Modal.Title>Product Added to Cart</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <p>
+          <p className="modal-text">
             {productQuantity} {title} has been added to your cart.
           </p>
         </Modal.Body>
