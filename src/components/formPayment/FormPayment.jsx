@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { StyledContactForm } from "../styles/ContactForm.styled";
+import { useNavigate } from "react-router-dom";
 //import { Link, useHistory } from "react-router-dom";
 
 const schema = yup
@@ -23,6 +24,7 @@ const schema = yup
 
 function PaymentForm() {
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const navigate = useNavigate();
 
   const {
     register,
@@ -35,10 +37,10 @@ function PaymentForm() {
 
   function onSubmit(data) {
     console.log(data);
-    // do redirection
     setIsSubmitted(true);
-
     reset();
+    // Navigate to checkout success page
+    navigate("/checkoutsuccess");
   }
 
   return (
