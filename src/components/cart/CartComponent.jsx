@@ -37,15 +37,15 @@ export default function CartComponent() {
                 <h3>{item.title}</h3>
                 <hr />
                 <p>
-                  <span className="big-text">Price :</span> Nok{" "}
+                  Price : Nok{" "}
                   {item.discountedPrice}
                 </p>
-                <p>
-                  <span className="big-text">Total : Nok </span>
-                  {(item.discountedPrice * item.quantity).toFixed(2)}
-                </p>
+                <p>Qty : {item.quantity}</p>
                 <hr />
-                <h5>Quantity: {item.quantity}</h5>
+                <p ><span className="big-text">Sub total : </span>Nok  {(item.discountedPrice * item.quantity).toFixed(2)}
+                </p>
+                
+                
               </div>
 
               <div className="btn">

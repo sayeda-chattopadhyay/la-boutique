@@ -54,16 +54,30 @@ export default function ProductCard({ data }) {
           </div>
           <div className="card-content">
             <h2>{title}</h2>
+            <hr />
             <p>{description}</p>
             <div className="card-footer">
-              <p>{price}</p>
-              <p>{discountedPrice}</p>
+              {/* <p>{price}</p>
+              <p>{discountedPrice}</p> */}
+               <div className="productCard-price">
+            {discountedPrice && price !== discountedPrice ? (
+              <>
+                <p>
+                  <del>Nok {price}</del>
+                </p>
+                <p>{discountedPrice}</p>
+              </>
+            ) : (
+              <p>Nok {price}</p>
+            )}
+          </div>
               <Button variant="primary" onClick={addToCart}>
                 Add To Cart
               </Button>
             </div>
           </div>
         </div>
+        <hr />
         <ProductReviews reviews={reviews} />
       </StyledProductCard>
 

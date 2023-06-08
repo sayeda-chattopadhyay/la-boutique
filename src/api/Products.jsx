@@ -25,16 +25,15 @@ const Products = () => {
   return (
     <>
       <StyledSearch>
+        <div>
+          <h2>Products</h2>
+        </div>
         <input
           onChange={(e) => setSearch(e.target.value)}
           type="search"
           placeholder="Search"
         />
       </StyledSearch>
-      <div>
-        <h2>Products</h2>
-      </div>
-
       <StyledContainer>
         {products
           .filter((product) => {

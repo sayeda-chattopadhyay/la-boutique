@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const StyledCard = styled.div`
-  border: 0.2px solid #fff;
   max-width: 400px;
   width: 100%;
   display: flex;
@@ -9,6 +8,14 @@ export const StyledCard = styled.div`
   align-items: center;
   justify-content: center;
   margin: 30px auto 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  padding: 20px;
+
+
+  h3{
+    margin-top: 10px;
+  }
 
   .card-image {
     width: 100%;
@@ -31,6 +38,13 @@ export const StyledCard = styled.div`
   .link {
     text-decoration: none;
   }
+
+.price{
+  display: flex;
+  justify-content: start;
+  gap: 20px
+}
+
 
   &:hover {
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);

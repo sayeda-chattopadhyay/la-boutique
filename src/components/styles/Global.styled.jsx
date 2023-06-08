@@ -47,6 +47,7 @@ input,
     width: 100%;
     color: ${({ theme }) => theme.colors.body};
   }
+  
 .cart-icon{
   font-size: 1.5rem;
 }

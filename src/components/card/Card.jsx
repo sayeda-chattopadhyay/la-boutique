@@ -3,14 +3,11 @@ import { StyledCard } from "../styles/Card.styled";
 import { Link } from "react-router-dom";
 // import { useContext } from "react";
 // import { CartContext } from "../../CartContext";
-import { Button } from "react-bootstrap";
+//import { Button } from "react-bootstrap";
 
 export default function Card({
   product: { id, imageUrl, title, description, price, discountedPrice },
 }) {
-  console.log("Price", price);
-  console.log("discountedPrice", discountedPrice);
-
   function calculateDiscountPercentage(price, discountedPrice) {
     if (price && discountedPrice) {
       const discount = price - discountedPrice;
@@ -38,18 +35,26 @@ export default function Card({
             )}
             <img src={imageUrl} alt={title} />
           </div>
-
           <div>
-            <h2>{title}</h2>
+            <h3>{title}</h3>
+            <hr />
             <p>{description}</p>
           </div>
-          <div>
-            <p>Price:{price}</p>
-            <p>Discounted Price:{discountedPrice}</p>
+          <div className="price">
+            {discountedPrice && price !== discountedPrice ? (
+              <>
+                <p>
+                  <del>Nok {price}</del>
+                </p>
+                <p>{discountedPrice}</p>
+              </>
+            ) : (
+              <p>Nok {price}</p>
+            )}
           </div>
-          <div>
+          {/* <div>
             <Button>View Item</Button>
-          </div>
+          </div> */}
         </Link>
       </StyledCard>
     </>

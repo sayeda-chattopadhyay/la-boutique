@@ -1,6 +1,11 @@
 import styled from "styled-components";
 
 export const StyledProductCard = styled.div`
+ //border: 0.2px solid #fff;
+margin: 0 auto;
+padding: 20px;
+
+
   // border: 0.2px solid #fff;
   // max-width: 400px;
   // width: 100%;
@@ -30,6 +35,13 @@ export const StyledProductCard = styled.div`
     overflow: hidden;
     margin: 0 auto;
   }
+  .productCard-price{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+
+
 
   img {
     width: 100%;
@@ -47,10 +59,7 @@ export const StyledProductCard = styled.div`
     text-decoration: none;
   }
 
-  &:hover {
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-    transform: scale(1.02);
-  }
+ 
 
   @media (max-width: ${({ theme }) => theme.mobile}) {
     .card-wrapper {
