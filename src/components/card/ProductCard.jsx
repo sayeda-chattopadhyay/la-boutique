@@ -14,7 +14,7 @@ export default function ProductCard({ data }) {
   const { id, title, imageUrl, description, reviews, price, discountedPrice } =
     data;
 
-  function calculateDiscountPercentage(price, discountedPrice) {
+   function calculateDiscountPercentage(price, discountedPrice) {
     if (price && discountedPrice) {
       const discount = price - discountedPrice;
       const discountPercentage = Math.round((discount / price) * 100);

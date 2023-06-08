@@ -1,15 +1,12 @@
-import React from "react";
-import { Link } from "react-router-dom";
 
-const CheckoutSuccess = () => {
+import CheckoutSuccess from "../components/checkoutSuccess/CheckoutSuccess";
+
+const SuccessCheckout = () => {
   return (
     <div>
-      <h1>Thank you for your purchase</h1>
-      <Link to="/">
-        <button>Continue Shopping</button>
-      </Link>
+      <CheckoutSuccess/>
     </div>
   );
 };
 
-export default CheckoutSuccess;
+export default SuccessCheckout;

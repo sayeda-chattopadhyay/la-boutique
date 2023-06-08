@@ -9,6 +9,7 @@ export const CartContext = createContext({
   removeOneFromCart: () => {},
   deleteFromCart: () => {},
   getTotalCost: () => {},
+  clearCart: () => {},
 
   // total: () => {},
 });
@@ -24,6 +25,7 @@ export function CartProvider({ children }) {
     deleteFromCart,
     getTotalCost,
     calculateProductsCount,
+    clearCart,
   };
 
   // calculate total Items in the cart
@@ -123,6 +125,12 @@ export function CartProvider({ children }) {
     return totalCost;
   }
 
+  // clear the cart
+  function clearCart() {
+    setCartProducts([]);
+    // localStorage.setItem("cartProducts", JSON.stringify(cartProducts));
+  }
+
   return (
     <CartContext.Provider value={contextValue}>{children}</CartContext.Provider>
   );
@@ -133,4 +141,3 @@ export default CartProvider;
 export function useCartContext() {
   return useContext(CartContext);
 }
-

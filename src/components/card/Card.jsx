@@ -8,11 +8,34 @@ import { Button } from "react-bootstrap";
 export default function Card({
   product: { id, imageUrl, title, description, price, discountedPrice },
 }) {
+  console.log("Price", price);
+  console.log("discountedPrice", discountedPrice);
+
+  function calculateDiscountPercentage(price, discountedPrice) {
+    if (price && discountedPrice) {
+      const discount = price - discountedPrice;
+      const discountPercentage = Math.round((discount / price) * 100);
+      return discountPercentage;
+    } else {
+      return null;
+    }
+  }
+
+  const discountPercentage = calculateDiscountPercentage(
+    price,
+    discountedPrice
+  );
+
   return (
     <>
       <StyledCard key={id}>
         <Link to={`/Product/${id}`} className="link">
           <div className="card-image">
+            {discountPercentage > 0 && (
+              <div className="discount-percentage">
+                {discountPercentage}% Off
+              </div>
+            )}
             <img src={imageUrl} alt={title} />
           </div>
 
@@ -21,8 +44,8 @@ export default function Card({
             <p>{description}</p>
           </div>
           <div>
-            <p>{price}</p>
-            <p>{discountedPrice}</p>
+            <p>Price:{price}</p>
+            <p>Discounted Price:{discountedPrice}</p>
           </div>
           <div>
             <Button>View Item</Button>
@@ -32,4 +55,3 @@ export default function Card({
     </>
   );
 }
-
