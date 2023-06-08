@@ -1,10 +1,10 @@
-import { StyledButton, StyledLinkButton } from "../styles/Button.styled";
+// import { StyledButton, StyledLinkButton } from "../styles/Button.styled";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { StyledContactForm } from "../styles/ContactForm.styled";
-import { Link } from "react-router-dom";
+//import { Link, useHistory } from "react-router-dom";
 
 const schema = yup
   .object({
@@ -28,15 +28,16 @@ function PaymentForm() {
     register,
     handleSubmit,
     reset,
-    formState: { errors, isValid },
+    formState: { errors },
   } = useForm({
     resolver: yupResolver(schema),
-    mode: "onChange", // Enable form validation on each input change
   });
 
   function onSubmit(data) {
     console.log(data);
+    // do redirection
     setIsSubmitted(true);
+
     reset();
   }
 
@@ -67,15 +68,10 @@ function PaymentForm() {
         />
         <p>{errors.creditCard?.message}</p>
       </div>
-      {isSubmitted ? (
-        <Link to={"/checkoutsuccess"}>
-          <StyledLinkButton>Submit</StyledLinkButton>
-        </Link>
-      ) : (
-        <StyledButton type="submit" disabled={!isValid}>
-          Submit
-        </StyledButton>
-      )}
+      <div>
+        <input type="submit" />
+        {isSubmitted && <p>Thank you for your message.</p>}
+      </div>
     </StyledContactForm>
   );
 }
