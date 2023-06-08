@@ -4,6 +4,11 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 import { useContext } from "react";
 import { CartContext } from "../../CartContext";
 import { Link } from "react-router-dom";
+import {
+  StyledLink,
+  StyledCartLink,
+  StyledBrand,
+} from "../styles/NavBar.Styled";
 
 function NavbarComponent() {
   const cart = useContext(CartContext);
@@ -12,22 +17,22 @@ function NavbarComponent() {
   return (
     <>
       <Navbar expand="sm">
-        <Navbar.Brand href="/" className="text-white">
-          la-boutique
-        </Navbar.Brand>
+        <Link to="/" className="brand-link">
+          <StyledBrand><span>la</span>Boutique</StyledBrand>
+        </Link>
         <Navbar.Toggle className="bg-white" />
         <Navbar.Collapse className="justify-content-between text-white">
           <Nav className="ms-auto">
-            <Link to="/" className="text-white">
+            <StyledLink to="/" className="text-white">
               Home
-            </Link>
-            <Link to="/Contact" className="text-white link-nav">
+            </StyledLink>
+            <StyledLink to="/Contact" className="text-white link-nav">
               Contact
-            </Link>
-            <Link to="/Cart" className="text-white link-nav">
+            </StyledLink>
+            <StyledCartLink to="/Cart" className="text-white link-nav">
               <AiOutlineShoppingCart className="cart-icon" />
               {productsCount}
-            </Link>
+            </StyledCartLink>
           </Nav>
         </Navbar.Collapse>
       </Navbar>

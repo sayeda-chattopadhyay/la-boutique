@@ -7,9 +7,10 @@ const Footer = () => {
   return (
     <StyledFooter>
       <StyledContainer>
-        <h2>la boutique</h2>
         <Flex>
           <ul>
+            <h2>la boutique</h2>
+            <hr />
             <li>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua

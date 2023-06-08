@@ -10,7 +10,7 @@ body {
   background: ${({ theme }) => theme.colors.body};
   margin: 0;
   padding: 20px;
-  font-family: "Poppins", sans-serif;
+  font-family: "Noto serif","Poppins", sans-serif;
   font-size: 1.15rem;
 }
 * {
@@ -20,6 +20,7 @@ body {
 p {
   opacity: 0.8;
   margin: 20px 0;
+  font-family: "Poppins", sans-serif;
 }
 
 img {
@@ -29,6 +30,10 @@ img {
 
 Link,
 .back-link{
+  text-decoration: none;
+}
+
+a.brand-link{
   text-decoration: none;
 }
 
@@ -45,6 +50,7 @@ input,
     border: 1px solid #ccc;
     border-radius: 4px;
     width: 100%;
+    font-family: "Poppins", sans-serif;
     color: ${({ theme }) => theme.colors.body};
   }
   
