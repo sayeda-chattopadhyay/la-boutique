@@ -6,13 +6,13 @@ export const StyledCheckout = styled.div`
   flex-wrap: wrap;
 
   .checkout-wrap {
-    border: 1px solid #ddd;
+    //border: 1px solid #ddd;
     max-width: 1000px;
     width: 100%;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    margin: 0 auto ;
+    align-items: start;
+    margin: 100px auto;
   }
 
   .payment-form {
@@ -24,12 +24,18 @@ export const StyledCheckout = styled.div`
     flex: 1;
   }
 
+  h1 {
+    width: 100%;
+    margin: 50px auto 50px;
+    text-align: center;
+  }
+
   @media (max-width: ${({ theme }) => theme.mobile}) {
     .checkout-wrap {
       flex-direction: column;
       flex-direction: column-reverse;
       gap: 60px;
-     
+      align-items: center;
     }
   }
 `;

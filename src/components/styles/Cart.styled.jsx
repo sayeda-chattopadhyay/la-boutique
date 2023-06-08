@@ -11,6 +11,8 @@ export const StyledCart = styled.div`
    flex-wrap: wrap;
   }
 
+ 
+
   .cart-item {
     display: flex;
     align-items: center;
@@ -105,4 +107,9 @@ export const StyledCart = styled.div`
       font-size: 20px;
       background-color: red;
     }
+
+    .checkout{
+      border: 2px solid #ccc;
+    }
+
 `;

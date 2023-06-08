@@ -59,6 +59,11 @@ export const StyledCheckoutCard = styled.div`
       .product-wrap {
         flex-direction: column;
         width: 100%;
+        margin-bottom: 20px;
+      }
+
+      .product-wrap img{
+        margin-bottom: 20px;
       }
     }
   }

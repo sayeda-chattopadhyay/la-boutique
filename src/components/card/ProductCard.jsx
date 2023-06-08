@@ -58,8 +58,6 @@ export default function ProductCard({ data }) {
             <hr />
             <p>{description}</p>
             <div className="card-footer">
-              {/* <p>{price}</p>
-              <p>{discountedPrice}</p> */}
               <div className="productCard-price">
                 {discountedPrice && price !== discountedPrice ? (
                   <>
@@ -76,8 +74,10 @@ export default function ProductCard({ data }) {
             </div>
           </div>
         </div>
-        <hr />
-        <ProductReviews reviews={reviews} />
+        <div className="product-review">
+          <h2> Customer Review</h2>
+          <ProductReviews reviews={reviews} />
+        </div>
       </StyledProductCard>
 
       <Modal show={showModal} onHide={() => setShowModal(false)}>

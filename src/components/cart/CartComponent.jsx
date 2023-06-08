@@ -23,14 +23,13 @@ export default function CartComponent() {
 
   return (
     <StyledCart>
-      <h1>Cart</h1>
       {cart.items.length === 0 ? (
-        <>
+        <div className="">
           <p>Your cart is empty.</p>
           <Link to={"/"}>
             <StyledButton>Go to Shopping </StyledButton>
           </Link>
-        </>
+        </div>
       ) : (
         <>
           <div className="cart-container">
@@ -79,9 +78,11 @@ export default function CartComponent() {
           <div className="total-cost">
             Total Cost: Nok {cart.getTotalCost().toFixed(2)}
           </div>
-          <Link to={"/checkout"}>
-            <StyledButton>Check out </StyledButton>
-          </Link>
+          <div className="checkout">
+            <Link to={"/checkout"}>
+              <StyledButton>Check out </StyledButton>
+            </Link>
+          </div>
         </>
       )}
       {/* <div className="total-cost">

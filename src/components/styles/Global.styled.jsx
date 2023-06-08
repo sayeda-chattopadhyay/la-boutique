@@ -62,6 +62,12 @@ input,
   color: black
 }
 
+.back-link{
+  margin-top: 200px;
+  margin-left: 20px;
+}
+
+
 `;
 
 export default GlobalStyles;

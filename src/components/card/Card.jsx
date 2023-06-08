@@ -52,9 +52,6 @@ export default function Card({
               <p>Nok {price}</p>
             )}
           </div>
-          {/* <div>
-            <Button>View Item</Button>
-          </div> */}
         </Link>
       </StyledCard>
     </>

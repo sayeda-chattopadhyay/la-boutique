@@ -7,8 +7,8 @@ import CheckoutCard from "../components/checkout/CheckoutCard";
 const Checkout = () => {
   return (
     <>
-    <h1>Checkout</h1>
       <StyledCheckout>
+      <h1>Checkout</h1>
         <div className="checkout-wrap">
         <div className="payment-form">
         <h3>Payment Details</h3>

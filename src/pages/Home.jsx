@@ -1,6 +1,5 @@
 import Banner from "../components/banner/Banner";
 import { ProductListProvider } from "../ProductListContext";
-
 import Products from "../api/Products";
 
 const Home = () => {
