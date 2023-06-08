@@ -1,3 +1,4 @@
+import { StyledButton, StyledLinkButton } from "../styles/Button.styled";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -27,9 +28,10 @@ function PaymentForm() {
     register,
     handleSubmit,
     reset,
-    formState: { errors },
+    formState: { errors, isValid },
   } = useForm({
     resolver: yupResolver(schema),
+    mode: "onChange", // Enable form validation on each input change
   });
 
   function onSubmit(data) {
@@ -67,11 +69,12 @@ function PaymentForm() {
       </div>
       {isSubmitted ? (
         <Link to={"/checkoutsuccess"}>
-          <button type="button">Submit</button>
-          {isSubmitted}
+          <StyledLinkButton>Submit</StyledLinkButton>
         </Link>
       ) : (
-        <button type="submit">Submit</button>
+        <StyledButton type="submit" disabled={!isValid}>
+          Submit
+        </StyledButton>
       )}
     </StyledContactForm>
   );

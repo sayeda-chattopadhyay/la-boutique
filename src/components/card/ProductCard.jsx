@@ -4,6 +4,7 @@ import { StyledProductCard } from "../styles/ProductCard.styled";
 import ProductReviews from "../../components/review/ProductReviews";
 import { useContext } from "react";
 import { CartContext } from "../../CartContext";
+import { StyledButton } from "../styles/Button.styled";
 
 export default function ProductCard({ data }) {
   const cart = useContext(CartContext);
@@ -14,7 +15,7 @@ export default function ProductCard({ data }) {
   const { id, title, imageUrl, description, reviews, price, discountedPrice } =
     data;
 
-   function calculateDiscountPercentage(price, discountedPrice) {
+  function calculateDiscountPercentage(price, discountedPrice) {
     if (price && discountedPrice) {
       const discount = price - discountedPrice;
       const discountPercentage = Math.round((discount / price) * 100);
@@ -59,21 +60,19 @@ export default function ProductCard({ data }) {
             <div className="card-footer">
               {/* <p>{price}</p>
               <p>{discountedPrice}</p> */}
-               <div className="productCard-price">
-            {discountedPrice && price !== discountedPrice ? (
-              <>
-                <p>
-                  <del>Nok {price}</del>
-                </p>
-                <p>{discountedPrice}</p>
-              </>
-            ) : (
-              <p>Nok {price}</p>
-            )}
-          </div>
-              <Button variant="primary" onClick={addToCart}>
-                Add To Cart
-              </Button>
+              <div className="productCard-price">
+                {discountedPrice && price !== discountedPrice ? (
+                  <>
+                    <p>
+                      <del>Nok {price}</del>
+                    </p>
+                    <p>{discountedPrice}</p>
+                  </>
+                ) : (
+                  <p>Nok {price}</p>
+                )}
+              </div>
+              <StyledButton onClick={addToCart}>Add To Cart</StyledButton>
             </div>
           </div>
         </div>

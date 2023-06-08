@@ -1,4 +1,4 @@
-import React from "react";
+import { StyledButton } from "../styles/Button.styled";
 import { useCartContext } from "../../CartContext";
 import { StyledCart } from "../styles/Cart.styled";
 import { BsFillTrashFill } from "react-icons/bs";
@@ -25,61 +25,71 @@ export default function CartComponent() {
     <StyledCart>
       <h1>Cart</h1>
       {cart.items.length === 0 ? (
-        <p>Your cart is empty.</p>
+        <>
+          <p>Your cart is empty.</p>
+          <Link to={"/"}>
+            <StyledButton>Go to Shopping </StyledButton>
+          </Link>
+        </>
       ) : (
-        <div className="cart-container">
-          {cart.items.map((item) => (
-            <div key={item.id} className="cart-item">
-              <div>
-                <img src={item.imageUrl} alt={item.title} />
-              </div>
-              <div>
-                <h3>{item.title}</h3>
-                <hr />
-                <p>
-                  Price : Nok{" "}
-                  {item.discountedPrice}
-                </p>
-                <p>Qty : {item.quantity}</p>
-                <hr />
-                <p ><span className="big-text">Sub total : </span>Nok  {(item.discountedPrice * item.quantity).toFixed(2)}
-                </p>
-                
-                
-              </div>
+        <>
+          <div className="cart-container">
+            {cart.items.map((item) => (
+              <div key={item.id} className="cart-item">
+                <div>
+                  <img src={item.imageUrl} alt={item.title} />
+                </div>
+                <div>
+                  <h3>{item.title}</h3>
+                  <hr />
+                  <p>Price : Nok {item.discountedPrice}</p>
+                  <p>Qty : {item.quantity}</p>
+                  <hr />
+                  <p>
+                    <span className="big-text">Sub total : </span>Nok{" "}
+                    {(item.discountedPrice * item.quantity).toFixed(2)}
+                  </p>
+                </div>
 
-              <div className="btn">
-                <button
-                  onClick={() => handleIncrease(item.id)}
-                  className="btn-icon"
-                >
-                  +
-                </button>
-                <p>{item.quantity}</p>
-                <button
-                  onClick={() => handleDecrease(item.id)}
-                  className="btn-icon"
-                >
-                  -
-                </button>
-                {/* <button onClick={() => handleRemove(item.id)}>
+                <div className="btn">
+                  <button
+                    onClick={() => handleIncrease(item.id)}
+                    className="btn-icon"
+                  >
+                    +
+                  </button>
+                  <p>{item.quantity}</p>
+                  <button
+                    onClick={() => handleDecrease(item.id)}
+                    className="btn-icon"
+                  >
+                    -
+                  </button>
+                  {/* <button onClick={() => handleRemove(item.id)}>
                   <RiDeleteBin2Line />
                 </button> */}
-                <BsFillTrashFill
-                  onClick={() => handleRemove(item.id)}
-                  className="remove-btn"
-                />
+                  <BsFillTrashFill
+                    onClick={() => handleRemove(item.id)}
+                    className="remove-btn"
+                  />
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+          <div className="total-cost">
+            Total Cost: Nok {cart.getTotalCost().toFixed(2)}
+          </div>
+          <Link to={"/checkout"}>
+            <StyledButton>Check out </StyledButton>
+          </Link>
+        </>
       )}
-      <div className="total-cost">
+      {/* <div className="total-cost">
         Total Cost: Nok {cart.getTotalCost().toFixed(2)}
       </div>
       <Link to={"/checkout"}>
-        <button>Check out </button>
-      </Link>
+        <StyledButton>Check out </StyledButton>
+      </Link> */}
     </StyledCart>
   );
 }

@@ -42,7 +42,6 @@ function App() {
             <div className="App">
               <GlobalStyles />
               <Routes>
-              <Route path="CheckoutSuccess" element={<SuccessCheckout />} />
                 <Route path="/" element={<BaseLayOut />}>
                   <Route index element={<Home />} />
                   <Route path="Product/:id" element={<ProductPage />} />

@@ -1,5 +1,6 @@
 
 import { StyledBanner } from "../styles/Banner.styled";
+import {StyledButton} from "../styles/Button.styled";
 
 const Banner = () => {
   return (
@@ -13,7 +14,7 @@ const Banner = () => {
           for the latest fashion trends, electronics, home essentials, or unique
           gifts, we have something for everyone
         </p>
-        <button>Explore</button>
+        <StyledButton>Explore</StyledButton>
       </div>
       <div className="banner-image">
         <img src="./images/banner.jpg" alt="Banner" />
