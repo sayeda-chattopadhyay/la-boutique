@@ -62,7 +62,7 @@ export default function ProductCard({ data }) {
                 {discountedPrice && price !== discountedPrice ? (
                   <>
                     <p>
-                    Nok<del> {price}</del>
+                    Nok <del> {price}</del>
                     </p>
                     <p>{discountedPrice}</p>
                   </>
