@@ -44,6 +44,10 @@ export const StyledBrand = styled.div`
   &:hover {
     text-decoration: underline;
   }
+
+  @media (max-width: ${({ theme }) => theme.mobile}) {
+    margin-bottom: 40px;
+  }
 `;
 
 export const StyledLink = styled(Link)`
@@ -54,6 +58,9 @@ export const StyledLink = styled(Link)`
 
   &:hover {
     text-decoration: underline;
+  }
+  @media (max-width: ${({ theme }) => theme.mobile}) {
+    margin-bottom: 24px;
   }
 `;
 
