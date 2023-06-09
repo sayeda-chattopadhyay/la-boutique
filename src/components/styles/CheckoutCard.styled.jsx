@@ -1,10 +1,11 @@
 import styled from "styled-components";
 
 export const StyledCheckoutCard = styled.div`
+ 
+
   .card-container {
     max-width: 500px;
     width: 100%;
-    border: 1px solid #ccc;
     margin: 0 auto;
     text-align: center;
 

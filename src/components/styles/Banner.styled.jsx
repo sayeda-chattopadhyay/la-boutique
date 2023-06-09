@@ -16,7 +16,7 @@ export const StyledBanner = styled.div`
 
   .banner-image {
     width: 100%;
-    max-width: 600px;
+    max-width: 700px;
     height: auto;
     overflow: hidden;
     margin: 0 auto;
@@ -27,6 +27,7 @@ export const StyledBanner = styled.div`
     height: auto;
     max-height: 100%;
     object-fit: cover;
+    border-radius: 10px;
   }
 
   @media (max-width: ${({ theme }) => theme.mobile}) {

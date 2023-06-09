@@ -23,6 +23,7 @@ export default function CartComponent() {
 
   return (
     <StyledCart>
+      <h1>Shopping Cart</h1>
       {cart.items.length === 0 ? (
         <div className="">
           <p>Your cart is empty.</p>
@@ -39,7 +40,7 @@ export default function CartComponent() {
                   <img src={item.imageUrl} alt={item.title} />
                 </div>
                 <div>
-                  <h3>{item.title}</h3>
+                  <h4>{item.title}</h4>
                   <hr />
                   <p>Price : Nok {item.discountedPrice}</p>
                   <p>Qty : {item.quantity}</p>
