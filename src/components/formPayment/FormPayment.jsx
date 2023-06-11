@@ -5,7 +5,8 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { StyledContactForm } from "../styles/ContactForm.styled";
 import { useNavigate } from "react-router-dom";
-//import { Link, useHistory } from "react-router-dom";
+import { useContext } from "react";
+import { CartContext } from "../../CartContext";
 
 const schema = yup
   .object({
@@ -24,6 +25,7 @@ const schema = yup
 
 function PaymentForm() {
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const cart = useContext(CartContext);
   const navigate = useNavigate();
 
   const {
@@ -39,7 +41,7 @@ function PaymentForm() {
     console.log(data);
     setIsSubmitted(true);
     reset();
-    // Navigate to checkout success page
+    cart.clearCart();
     navigate("/checkoutsuccess");
   }
 
