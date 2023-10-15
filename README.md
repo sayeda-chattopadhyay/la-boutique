@@ -23,8 +23,9 @@ The following functionalities are available to the users:
 
 - an user may view a list of products and search products
 - an user can view individual product
-- an user can view the shopping cart and add products
-- an user check out
+- an user can view / clear the shopping cart 
+- an user can add, remove products from the shopping cart
+- an user can checkout
 - an user can contact using the contact form
 
 ## Links
