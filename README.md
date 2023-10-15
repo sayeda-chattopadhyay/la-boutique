@@ -1,6 +1,6 @@
 # la-Boutique
 
-![Homepage Preview](/src/assets/images/homepage.png)
+![Homepage Preview](images/homepage.png)
 
 ## Table Of Content
 
