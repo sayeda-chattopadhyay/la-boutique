@@ -37,7 +37,6 @@ The following functionalities are available to the users:
     </tr>
   </thead>
   <tbody>
-
     <tr>
       <th>Repository</th>
       <td><a href="https://github.com/sayeda-chattopadhyay/holidaze">Project Repository</a></td>
