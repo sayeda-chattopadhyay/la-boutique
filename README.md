@@ -1,70 +1,88 @@
-# Getting Started with Create React App
+# la-Boutique
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Homepage Preview](/src/assets/images/homepage.png)
 
-## Available Scripts
+## Table Of Content
 
-In the project directory, you can run:
+- [About](#about)
+- [Functionalities](#functionalities)
+- [Links](#links)
+- [Tools](#tools)
+- [Contributing](#contributing)
+- [License](#license)
+- [Developer Bio](#bio)
+- [Contact](#contact)
 
-### `npm start`
+## About
+As part of a Noroff assignment, I created la-Boutique, an intuitive, functional, and responsive eCommerce website using React. Users can effortlessly add items to their cart and enjoy flexibility with options to add or remove selected products. The site is styled with Bootstrap and styled components, ensuring a seamless user experience. To enhance data validation, I incorporated a validated contact form utilizing Yup and react-hook-form. This project marked my initiation into React application development, and its implementation presented a valuable learning experience
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Functionalities
 
-### `npm test`
+The following functionalities are available to the users:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- an user may view a list of products and search products
+- an user can view individual product
+- an user can view the shopping cart and add products
+- an user check out
+- an user can contact using the contact form
 
-### `npm run build`
+## Links
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<table>
+  <thead>
+    <tr>
+      <th>Resource</th>
+      <td>URL</td>
+    </tr>
+  </thead>
+  <tbody>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    <tr>
+      <th>Repository</th>
+      <td><a href="https://github.com/sayeda-chattopadhyay/holidaze">Project Repository</a></td>
+    </tr>
+    <tr>
+      <th>Hosted Demo</th>
+      <td><a href="https://ornate-flan-63ec17.netlify.app/">Live Site</a></td>
+    </tr>
+  </tbody>
+</table>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Tools
 
-### `npm run eject`
+<img src="https://skillicons.dev/icons?i=react,bootstrap,js,github,vscode,netlify,figma"/>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- React
+- Bootstrap
+- JavaScript
+- GitHub
+- Vscode
+- Netlify
+- Figma
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+</br>
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Contributing
 
-### Code Splitting
+Contact if you face any issues and if you want to suggest improvements and changes.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## License
 
-### Analyzing the Bundle Size
+This project is licensed under a Creative Commons license. It is open for contributions, but please credit the project if you use the code in your projects.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Bio
 
-### Making a Progressive Web App
+- UX designer and a front-end developer
+- BSc in Physical Sciences
+- Several years of experience in banking
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+<a href="https://endearing-froyo-04825b.netlify.app/">My Portfolio</a>
 
-### Advanced Configuration
+## Contact
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<a href="https://www.linkedin.com/in/sayeda-chattopadhyay-7b33ba156/" target="_blank"> <img src="https://user-images.githubusercontent.com/83353551/195984318-dc867bbc-1288-4872-ba34-e6a4a7700535.png" alt="behance" width="40" height="40"/> </a> <a href="https://www.behance.net/gallery/111339401/UX-Portfolio" target="_blank"> <img src="https://github.com/devicons/devicon/blob/master/icons/behance/behance-original.svg" alt="behance" width="40" height="40"/> </a>
