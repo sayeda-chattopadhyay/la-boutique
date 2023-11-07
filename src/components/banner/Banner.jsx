@@ -19,7 +19,7 @@ const Banner = () => {
         </Link> */}
       </div>
       <div className="banner-image">
-        <img src="./images/banner.jpg" alt="Banner" />
+        <img src="/images/banner.jpg" alt="Banner" />
       </div>
     </StyledBanner>
   );
