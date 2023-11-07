@@ -14,8 +14,8 @@
 - [Contact](#contact)
 
 ## About
-As part of a Noroff assignment, I created la-Boutique, an intuitive, functional, and responsive eCommerce website using React. Users can effortlessly add items to their cart and enjoy flexibility with options to add or remove selected products. The site is styled with Bootstrap and styled components, ensuring a seamless user experience. To enhance data validation, I incorporated a validated contact form utilizing Yup and react-hook-form. This project marked my initiation into React application development, and its implementation presented a valuable learning experience
 
+As part of a Noroff assignment, I created la-Boutique, an intuitive, functional, and responsive eCommerce website using React. Users can effortlessly add items to their cart and enjoy flexibility with options to add or remove selected products. The site is styled with Bootstrap and styled components, ensuring a seamless user experience. To enhance data validation, I incorporated a validated contact form utilizing Yup and react-hook-form. This project marked my initiation into React application development, and its implementation presented a valuable learning experience
 
 ## Functionalities
 
@@ -23,7 +23,7 @@ The following functionalities are available to the users:
 
 - an user may view a list of products and search products
 - an user can view individual product
-- an user can view / clear the shopping cart 
+- an user can view / clear the shopping cart
 - an user can add, remove products from the shopping cart
 - an user can checkout
 - an user can contact using the contact form
@@ -40,11 +40,11 @@ The following functionalities are available to the users:
   <tbody>
     <tr>
       <th>Repository</th>
-      <td><a href="https://github.com/sayeda-chattopadhyay/holidaze">Project Repository</a></td>
+      <td><a href="https://github.com/sayeda-chattopadhyay/la-boutique">Project Repository</a></td>
     </tr>
     <tr>
       <th>Hosted Demo</th>
-      <td><a href="https://ornate-flan-63ec17.netlify.app/">Live Site</a></td>
+      <td><a href="https://la-boutique.netlify.app/">Live Site</a></td>
     </tr>
   </tbody>
 </table>
@@ -61,11 +61,7 @@ The following functionalities are available to the users:
 - Netlify
 - Figma
 
-
-
 </br>
-
-
 
 ## Contributing
 
