@@ -63,6 +63,12 @@ The following functionalities are available to the users:
 
 </br>
 
+## Setting up
+
+- Download and extract the zip file or clone the project in the command line from your preferred editor.
+- Run `npm install` in the project root directory to install the necessary dependencies
+- Run `npm run start` to start the development server
+
 ## Contributing
 
 Contact if you face any issues and if you want to suggest improvements and changes.
